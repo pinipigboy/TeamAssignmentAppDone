@@ -1,62 +1,57 @@
-@model TeamAssignmentApp.Models.TeamAssignment
+@using Microsoft.AspNetCore.Hosting;
+@using System.Collections.Generic;
+@model TeamAssignmentApp.Models.TeamAssignment;
+@inject IWebHostEnvironment Environment;
 
 @{
     ViewData["Title"] = "Teams";
     var colors = new List<string> { "bg-primary", "bg-success", "bg-info", "bg-warning", "bg-danger" };
     var random = new Random();
+    var animalNamesPath = System.IO.Path.Combine(Environment.WebRootPath ?? string.Empty, "animals.txt");
+    var animalNames = System.IO.File.ReadAllLines(animalNamesPath);
 }
 
-@if (Model != null)
-{
-    <div class="container mt-4">
-        <h2>Teams</h2>
-        <form asp-action="AssignTeamNames" method="post">
-            <div style="display:none;">
-                <textarea asp-for="Names"></textarea>
-                <input asp-for="TeamSize" />
-                @if (Model.Teams != null)
-                {
-                    @for (int i = 0; i < Model.Teams.Count; i++)
-                    {
-                        <input type="hidden" name="Teams[@i].TeamName" value="@Model.Teams[i]?.TeamName" />
-                        @if (Model.Teams[i]?.Members != null)
-                        {
-                            @foreach (var member in Model.Teams[i].Members)
-                            {
-                                <input type="hidden" name="Teams[@i].Members" value="@member.Trim()" />
-                            }
-                        }
-                    }
-                }
-            </div>
-            <button type="submit" class="btn btn-primary mb-4">Assign Random Team Names</button>
-        </form>
-        <div class="row">
-            @if (Model.Teams != null)
-            {
-                @foreach (var team in Model.Teams)
-                {
-                    var colorClass = colors[random.Next(colors.Count)];
-                    <div class="col-md-4 mb-4">
-                        <div class="card @colorClass text-white">
-                            <div class="card-header">
-                                @team?.TeamName
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    @if (team?.Members != null)
-                                    {
-                                        @foreach (var member in team.Members)
-                                        {
-                                            <li class="list-group-item">@member.Trim()</li>
-                                        }
-                                    }
-                                </ul>
-                            </div>
-                        </div>
+<div class="container mt-4">
+    <h2>Teams</h2>
+    <div class="row" id="teamsContainer">
+        @foreach (var team in Model.Teams)
+        {
+            var colorClass = colors[random.Next(colors.Count)];
+            <div class="col-md-4 mb-4 team-card">
+                <div class="card @colorClass text-white">
+                    <div class="card-header">
+                        <span class="team-name">@team.TeamName</span>
                     </div>
-                }
-            }
-        </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            @foreach (var member in team.Members)
+                            {
+                                <li class="list-group-item">@member</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
+    <button class="btn btn-primary mb-4" onclick="assignRandomTeamNames()">Assign Random Team Names</button>
+</div>
+
+@section Scripts {
+    <script>
+        const teamNames = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(animalNames));
+
+        function assignRandomTeamNames() {
+            const teamCards = document.querySelectorAll('.team-card');
+            const assignedNames = new Set();
+            teamCards.forEach(card => {
+                let teamName;
+                do {
+                    teamName = teamNames[Math.floor(Math.random() * teamNames.length)];
+                } while (assignedNames.has(teamName));
+                assignedNames.add(teamName);
+                card.querySelector('.team-name').textContent = teamName;
+            });
+        }
+    </script>
 }
