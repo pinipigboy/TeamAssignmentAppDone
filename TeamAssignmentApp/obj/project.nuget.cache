@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GvuUrfyxap+20du0VRJxEfwKJVVrXwXqAo6UqvSxT77KIPwuWae5eYnBH3b2oNptYJ2veUeo0eciB+Y5bZvn2g==",
+  "dgSpecHash": "ZeIbTlpSAB5v7b8mV/suvJrkxKD1amYzQ2/VHy+hYye1O55n3sff2efOvb8o0KoQQJvvykHuIpRbgjUXOtBaWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
+  "projectFilePath": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sagan\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\sagan\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

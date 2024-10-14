@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\TeamAssignmentApp.csproj": {}
+    "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\TeamAssignmentApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\TeamAssignmentApp.csproj": {
+    "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\TeamAssignmentApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
+        "projectUniqueName": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
         "projectName": "TeamAssignmentApp",
-        "projectPath": "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
+        "projectPath": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
         "packagesPath": "C:\\Users\\sagan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\obj\\",
+        "outputPath": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sagan\\AppData\\Roaming\\NuGet\\NuGet.Config"

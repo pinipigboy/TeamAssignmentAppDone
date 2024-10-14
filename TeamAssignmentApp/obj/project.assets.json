@@ -9081,11 +9081,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
+      "projectUniqueName": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
       "projectName": "TeamAssignmentApp",
-      "projectPath": "c:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
+      "projectPath": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\TeamAssignmentApp.csproj",
       "packagesPath": "C:\\Users\\sagan\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\obj\\",
+      "outputPath": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sagan\\AppData\\Roaming\\NuGet\\NuGet.Config"
