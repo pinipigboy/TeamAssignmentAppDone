@@ -8647,11 +8647,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp.Tests\\TeamAssignmentApp.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp.Tests\\TeamAssignmentApp.Tests.csproj",
       "projectName": "TeamAssignmentApp.Tests",
-      "projectPath": "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp.Tests\\TeamAssignmentApp.Tests.csproj",
+      "projectPath": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp.Tests\\TeamAssignmentApp.Tests.csproj",
       "packagesPath": "C:\\Users\\sagan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp.Tests\\obj\\",
+      "outputPath": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sagan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -8666,8 +8666,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\TeamAssignmentApp.csproj": {
-              "projectPath": "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp\\TeamAssignmentApp.csproj"
+            "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\TeamAssignmentApp.csproj": {
+              "projectPath": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp\\TeamAssignmentApp.csproj"
             }
           }
         }

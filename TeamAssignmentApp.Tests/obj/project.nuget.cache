@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x4y8bKhmYN2dlSY3rIrADH0vtpKzQMAOa/1SAx2ramVRa45PJomCJzj2Hg2du9fXxmqV15FSXLWeYCzxYJQq8g==",
+  "dgSpecHash": "Ic7GWduIUlav4Zoi4AeOn8kGsYjfiq7gqoy2hQHYkS5dZjmDYOBiZ/RGchD7DWAjMGfb7x1uAUF+5vbcWj4mNw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sagan\\TeamAssignment\\TeamAssignmentApp.Tests\\TeamAssignmentApp.Tests.csproj",
+  "projectFilePath": "C:\\Users\\sagan\\TeamAssignmentAppDone\\TeamAssignmentApp.Tests\\TeamAssignmentApp.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sagan\\.nuget\\packages\\fluentassertions\\6.2.0\\fluentassertions.6.2.0.nupkg.sha512",
     "C:\\Users\\sagan\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
