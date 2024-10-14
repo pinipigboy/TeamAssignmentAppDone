@@ -1,0 +1,62 @@
+@model TeamAssignmentApp.Models.TeamAssignment
+
+@{
+    ViewData["Title"] = "Teams";
+    var colors = new List<string> { "bg-primary", "bg-success", "bg-info", "bg-warning", "bg-danger" };
+    var random = new Random();
+}
+
+@if (Model != null)
+{
+    <div class="container mt-4">
+        <h2>Teams</h2>
+        <form asp-action="AssignTeamNames" method="post">
+            <div style="display:none;">
+                <textarea asp-for="Names"></textarea>
+                <input asp-for="TeamSize" />
+                @if (Model.Teams != null)
+                {
+                    @for (int i = 0; i < Model.Teams.Count; i++)
+                    {
+                        <input type="hidden" name="Teams[@i].TeamName" value="@Model.Teams[i]?.TeamName" />
+                        @if (Model.Teams[i]?.Members != null)
+                        {
+                            @foreach (var member in Model.Teams[i].Members)
+                            {
+                                <input type="hidden" name="Teams[@i].Members" value="@member.Trim()" />
+                            }
+                        }
+                    }
+                }
+            </div>
+            <button type="submit" class="btn btn-primary mb-4">Assign Random Team Names</button>
+        </form>
+        <div class="row">
+            @if (Model.Teams != null)
+            {
+                @foreach (var team in Model.Teams)
+                {
+                    var colorClass = colors[random.Next(colors.Count)];
+                    <div class="col-md-4 mb-4">
+                        <div class="card @colorClass text-white">
+                            <div class="card-header">
+                                @team?.TeamName
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    @if (team?.Members != null)
+                                    {
+                                        @foreach (var member in team.Members)
+                                        {
+                                            <li class="list-group-item">@member.Trim()</li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}

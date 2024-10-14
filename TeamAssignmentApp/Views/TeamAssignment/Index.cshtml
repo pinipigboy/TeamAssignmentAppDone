@@ -1,0 +1,67 @@
+@model TeamAssignmentApp.Models.TeamAssignment
+
+@{
+    ViewData["Title"] = "Team Assignment";
+}
+
+<div class="container mt-4">
+    <h2>Team Assignment</h2>
+    <form asp-action="CreateTeams" method="post" class="needs-validation" novalidate>
+        <div class="form-group">
+            <label for="Names">Names (one per line)</label>
+            <textarea asp-for="Names" id="names" class="form-control" rows="10" required></textarea>
+            <div class="invalid-feedback">
+                Please provide a valid list of names. Only letters, spaces, and the characters ,.-_' are allowed.
+            </div>
+            <div class="empty-line-feedback text-danger" style="display: none;">
+                No empty lines or blank spaces are allowed.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="TeamSize">Team Size</label>
+            <input asp-for="TeamSize" class="form-control" required min="2" max="10" />
+            <div class="invalid-feedback">
+                Team size must be between 2 and 10.
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Assign Teams</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        var names = document.getElementById('names').value;
+                        var lines = names.split('\n');
+                        var regex = /^[a-zA-Z\s,.'-_]+$/;
+                        var hasInvalidLine = lines.some(line => !regex.test(line.trim()) || line.trim() === "");
+
+                        if (hasInvalidLine) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            document.getElementById('names').classList.add('is-invalid');
+                            document.querySelector('.empty-line-feedback').style.display = 'block';
+                        } else {
+                            document.getElementById('names').classList.remove('is-invalid');
+                            document.querySelector('.empty-line-feedback').style.display = 'none';
+                            document.getElementById('names').classList.add('is-valid');
+                        }
+
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}
